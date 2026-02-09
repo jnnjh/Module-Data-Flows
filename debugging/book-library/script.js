@@ -38,7 +38,11 @@ function submit() {
   ) {
     alert("Please fill all fields!");
     return false;
-  } else {
+  } if (pages.value <= 0 || !Number.isInteger(parseInt((pages.value)))) {
+    alert("Pages must be a valid number and larger than 0");
+    return false;
+  }
+  else {
     let book = new Book(title.value, author.value, pages.value, check.checked);
     myLibrary.push(book);
     render();
