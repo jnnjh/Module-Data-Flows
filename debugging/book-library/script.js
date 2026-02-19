@@ -36,11 +36,22 @@ function submit() {
   ) {
     alert("Please fill all fields!");
     return false;
-  } else {
-    let book = new Book(title.value, title.value, pages.value, check.checked);
-    library.push(book);
-    render();
   }
+
+  let book = new Book(
+    title.value,
+    author.value,
+    pages.value,
+    check.checked
+  );
+
+  myLibrary.push(book);
+  render();
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  check.checked = false;
 }
 
 function Book(title, author, pages, check) {
@@ -54,7 +65,7 @@ function render() {
   let table = document.getElementById("display");
   let rowsNumber = table.rows.length;
   //delete old table
-  for (let n = rowsNumber - 1; n > 0; n-- {
+  for (let n = rowsNumber - 1; n > 0; n--) {
     table.deleteRow(n);
   }
   //insert updated row and cells
