@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#comicContainer img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
